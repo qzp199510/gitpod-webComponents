@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    :root {
+      --my-color: red;
+    }
+    h3 {
+      color: pink
+    }
+    
+  </style>
+</head>
+
+
+<body>
+  <script type="module" src="./main.js"></script>
+  <!-- <my-div></my-div> -->
+  <my-counter count="100"></my-counter>
+  <my-lit-counter count="100"></my-lit-counter>
+  <my-html-templates>
+    <div slot='title'>测试slot</div>
+  </my-html-templates>
+  <template id="my-html-templates">
+    <div class="container">
+      <img class="image" src="https://pic1.zhimg.com/50/v2-a6d65e05ec8db74369f3a7c0073a227a_200x0.webp" alt="">
+      <h3 class="title">切尔诺贝利的祭祷</h3>
+      <slot name="title"></slot>
+    </div>
+  </template>
+
+</body>
+
+</html>
