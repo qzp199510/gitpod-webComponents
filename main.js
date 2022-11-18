@@ -93,10 +93,21 @@ class Counter extends HTMLElement {
         super();
         // 设置为open才可以添加元素
         this.attachShadow({ mode: 'open' })
+        
+    }
+    connectedCallback(){
+        this.render()
+        this.btn.addEventListener('click', () => {
+            this.count++
+            window.dispatchEvent(new CustomEvent('countFn',{detail:{str: 123456789}}))
+        })
+    }
+    render(){
         // 挂载根dom
         this.shadowRoot.innerHTML = `
         <style>
             button{
+            color:var(--my-color);
             width: 200px;
             height: 100px;
             border: 1px solid #000;
@@ -104,7 +115,7 @@ class Counter extends HTMLElement {
         </style>
         <button>${this.count}</button>`
         this.btn = this.shadowRoot.querySelector('button')
-        this.btn.addEventListener('click', () => this.count++)
+        
     }
 }
 customElements.define('my-counter', Counter);

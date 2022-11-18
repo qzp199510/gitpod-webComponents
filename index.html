@@ -33,7 +33,14 @@
       <slot name="title"></slot>
     </div>
   </template>
-
+  <script>
+    (function(){
+      window.addEventListener('countFn', (e) => {
+        console.log(e)
+        alert(e.type);
+      })
+    }())
+  </script>
 </body>
 
 </html>
